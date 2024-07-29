@@ -30,6 +30,12 @@ public class Conversacion {
     @ManyToMany(mappedBy = "conversaciones")
     private List<Usuario> usuarios;
 
+    @ManyToOne
+    private TipoConversacion tipoConversacion;
+
+    @OneToMany(mappedBy = "conversacion")
+    private List<Mensaje> mensajes;
+
     public Conversacion(){
 
     }
@@ -71,5 +77,13 @@ public class Conversacion {
 
     public void setFechaActualización(Date fechaActualización) {
         this.fechaActualización = fechaActualización;
+    }
+
+    public TipoConversacion getTipoConversacion() {
+        return tipoConversacion;
+    }
+
+    public void setTipoConversacion(TipoConversacion tipoConversacion) {
+        this.tipoConversacion = tipoConversacion;
     }
 }

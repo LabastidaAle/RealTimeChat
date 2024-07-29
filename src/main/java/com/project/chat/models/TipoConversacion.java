@@ -14,17 +14,16 @@ public class TipoConversacion {
     private Integer id;
     private String tipo;
 
-    @OneToMany(mappedBy = "tipoMensaje")
-    private List<Mensaje> mensajes;
+    @OneToMany(mappedBy = "tipoConversacion")
+    private List<Conversacion> conversaciones;
 
     public TipoConversacion(){
 
     }
 
-    public TipoConversacion(Integer id, String tipo, List<Mensaje> mensajes) {
+    public TipoConversacion(Integer id, String tipo) {
         this.id = id;
         this.tipo = tipo;
-        this.mensajes = mensajes;
     }
 
     public Integer getId() {
@@ -43,11 +42,11 @@ public class TipoConversacion {
         this.tipo = tipo;
     }
 
-    public List<Mensaje> getMensajes() {
-        return mensajes;
+    public List<Conversacion> getConversaciones() {
+        return conversaciones;
     }
 
-    public void setMensajes(List<Mensaje> mensajes) {
-        this.mensajes = mensajes;
+    public void setConversaciones(List<Conversacion> conversaciones) {
+        this.conversaciones = conversaciones;
     }
 }

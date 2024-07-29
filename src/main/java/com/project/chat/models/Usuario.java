@@ -14,14 +14,6 @@ public class Usuario {
     String correo;
     String nombreUsuario;
 
-    public List<Conversacion> getConversaciones() {
-        return conversaciones;
-    }
-
-    public void setConversaciones(List<Conversacion> conversaciones) {
-        this.conversaciones = conversaciones;
-    }
-
     String urlFotoPerfil;
 
     //Lista que almacenará la relación de los usuarios y sus multiples conversaciones
@@ -43,6 +35,15 @@ public class Usuario {
         this.nombreUsuario = nombreUsuario;
         this.urlFotoPerfil = urlFotoPerfil;
     }
+
+    public List<Conversacion> getConversaciones() {
+        return conversaciones;
+    }
+
+    public void setConversaciones(List<Conversacion> conversaciones) {
+        this.conversaciones = conversaciones;
+    }
+
 
     public Integer getId() {
         return id;

@@ -2,6 +2,8 @@ package com.project.chat.models;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tipoMensaje")
 public class TipoMensaje {
@@ -9,6 +11,10 @@ public class TipoMensaje {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String tipo;
+
+    @OneToMany (mappedBy = "tipoMensaje")
+    private List<Mensaje> mensajes;
+
 
     public TipoMensaje(){
 
@@ -33,5 +39,13 @@ public class TipoMensaje {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public List<Mensaje> getMensajes() {
+        return mensajes;
+    }
+
+    public void setMensajes(List<Mensaje> mensajes) {
+        this.mensajes = mensajes;
     }
 }
