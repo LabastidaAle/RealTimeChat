@@ -1,11 +1,37 @@
 package com.project.chat.models;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+
+@Entity
+@Table (name = "usuarios")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     String nombre;
     String correo;
     String nombreUsuario;
+
+    public List<Conversacion> getConversaciones() {
+        return conversaciones;
+    }
+
+    public void setConversaciones(List<Conversacion> conversaciones) {
+        this.conversaciones = conversaciones;
+    }
+
     String urlFotoPerfil;
+
+    //Lista que almacenará la relación de los usuarios y sus multiples conversaciones
+    @ManyToMany
+    @JoinTable(
+            name = "usuario_conversacion",       // Tabla intermedia y sus llaves
+            joinColumns = @JoinColumn(name = "usuarioId"),
+            inverseJoinColumns = @JoinColumn(name = "conversacionId")
+    )
+    private List<Conversacion> conversaciones;
 
     Usuario(){
     }
