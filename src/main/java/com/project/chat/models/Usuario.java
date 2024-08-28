@@ -9,12 +9,15 @@ import java.util.List;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String nombre;
-    String correo;
-    String nombreUsuario;
+    private Integer id;
+    private String nombre;
+    private String email;
+    private String nombreUsuario;
 
-    String urlFotoPerfil;
+    private String password;
+
+    private String urlFotoPerfil;
+
 
     //Lista que almacenará la relación de los usuarios y sus multiples conversaciones
     @ManyToMany
@@ -28,12 +31,14 @@ public class Usuario {
     Usuario(){
     }
 
-    public Usuario(Integer id, String nombre, String correo, String nombreUsuario, String urlFotoPerfil) {
+    public Usuario(Integer id, String nombre, String email, String nombreUsuario, String password, String urlFotoPerfil, List<Conversacion> conversaciones) {
         this.id = id;
         this.nombre = nombre;
-        this.correo = correo;
+        this.email = email;
         this.nombreUsuario = nombreUsuario;
+        this.password = password;
         this.urlFotoPerfil = urlFotoPerfil;
+        this.conversaciones = conversaciones;
     }
 
     public List<Conversacion> getConversaciones() {
@@ -61,12 +66,12 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNombreUsuario() {
@@ -76,6 +81,15 @@ public class Usuario {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public String getUrlFotoPerfil() {
         return urlFotoPerfil;
