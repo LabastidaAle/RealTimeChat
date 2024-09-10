@@ -18,5 +18,6 @@
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/ITipoConversacionService.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/ITipoMensajeService.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/IUsuarioService.java
+/home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/TipoConversacionServiceImpl.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/TipoMensajeServiceImpl.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/UsuarioServiceImpl.java
