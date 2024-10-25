@@ -1,5 +1,6 @@
 package com.project.chat.service;
 
+import com.project.chat.models.Conversacion;
 import com.project.chat.models.Usuario;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface IUsuarioService {
     Optional<Usuario> findByEmailAndNombreUsuario(String email, String nombreUsuario);
 
     Optional<Usuario> findByNombreUsuarioAndPassword(String nombreUsuario, String password);
-}
+
+    List<Usuario> findByConectadoTrue();
+
+    List<Conversacion> findConversacionesByUsuarioId(Integer id);}

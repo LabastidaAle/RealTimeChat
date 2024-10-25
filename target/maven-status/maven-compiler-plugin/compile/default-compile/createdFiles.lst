@@ -1,4 +1,6 @@
+com/project/chat/service/WebSocketConfig.class
 com/project/chat/service/TipoConversacionServiceImpl.class
 com/project/chat/service/TipoMensajeServiceImpl.class
 com/project/chat/service/DataInitializr.class
+com/project/chat/service/ConversacionServiceImpl.class
 com/project/chat/controller/MensajeController.class

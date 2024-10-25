@@ -1,5 +1,6 @@
 package com.project.chat.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,7 +15,10 @@ public class Usuario {
     private String email;
     private String nombreUsuario;
 
+    @JsonIgnore
     private String password;
+
+    private Boolean conectado;
 
     private String urlFotoPerfil;
 
@@ -26,29 +30,23 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "usuarioId"),
             inverseJoinColumns = @JoinColumn(name = "conversacionId")
     )
+
+    @JsonIgnore
     private List<Conversacion> conversaciones;
 
     Usuario(){
     }
 
-    public Usuario(Integer id, String nombre, String email, String nombreUsuario, String password, String urlFotoPerfil, List<Conversacion> conversaciones) {
+    public Usuario(Integer id, String nombre, String email, String nombreUsuario, String password, Boolean status, String urlFotoPerfil, List<Conversacion> conversaciones) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.nombreUsuario = nombreUsuario;
         this.password = password;
+        this.conectado = false;
         this.urlFotoPerfil = urlFotoPerfil;
         this.conversaciones = conversaciones;
     }
-
-    public List<Conversacion> getConversaciones() {
-        return conversaciones;
-    }
-
-    public void setConversaciones(List<Conversacion> conversaciones) {
-        this.conversaciones = conversaciones;
-    }
-
 
     public Integer getId() {
         return id;
@@ -90,6 +88,13 @@ public class Usuario {
         this.password = password;
     }
 
+    public Boolean getConectado() {
+        return conectado;
+    }
+
+    public void setConectado(Boolean conectado) {
+        this.conectado = conectado;
+    }
 
     public String getUrlFotoPerfil() {
         return urlFotoPerfil;
@@ -97,5 +102,13 @@ public class Usuario {
 
     public void setUrlFotoPerfil(String urlFotoPerfil) {
         this.urlFotoPerfil = urlFotoPerfil;
+    }
+
+    public List<Conversacion> getConversaciones() {
+        return conversaciones;
+    }
+
+    public void setConversaciones(List<Conversacion> conversaciones) {
+        this.conversaciones = conversaciones;
     }
 }

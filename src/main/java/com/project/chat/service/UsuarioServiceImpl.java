@@ -1,5 +1,6 @@
 package com.project.chat.service;
 
+import com.project.chat.models.Conversacion;
 import com.project.chat.models.Usuario;
 import com.project.chat.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,15 @@ public class UsuarioServiceImpl implements IUsuarioService{
     @Override
     public Optional<Usuario> findByNombreUsuarioAndPassword(String nombreUsuario, String password) {
         return iUsuarioRepository.findByNombreUsuarioAndPassword(nombreUsuario, password);
+    }
+
+    @Override
+    public List<Conversacion> findConversacionesByUsuarioId(Integer id) {
+        return iUsuarioRepository.findConversacionesByUsuarioId(id);
+    }
+
+    @Override
+    public List<Usuario> findByConectadoTrue() {
+        return iUsuarioRepository.findByConectadoTrue();
     }
 }

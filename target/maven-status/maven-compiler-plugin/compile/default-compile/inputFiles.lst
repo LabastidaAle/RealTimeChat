@@ -12,6 +12,7 @@
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/repository/ITipoConversacionRepository.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/repository/ITipoMensajeRepository.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/repository/IUsuarioRepository.java
+/home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/ConversacionServiceImpl.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/DataInitializr.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/IConversacionService.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/IMensajeService.java
@@ -21,3 +22,4 @@
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/TipoConversacionServiceImpl.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/TipoMensajeServiceImpl.java
 /home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/UsuarioServiceImpl.java
+/home/alh/Documentos/Portafolio/RealTimeChat/src/main/java/com/project/chat/service/WebSocketConfig.java

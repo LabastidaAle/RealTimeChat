@@ -6,7 +6,5 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface IConversacionService {
-
-    @Query("SELECT c from Conversacion c WHERE ")
-    List<Conversacion> getAllChatsbyUser(Integer userId);
+    List<Conversacion> findbyUsuarioId(Integer userId);
 }
